@@ -13,7 +13,7 @@ img {
 body {
     background-color: #F5F5DD;
     color: #202020;
-    transition: all 2s;
+    transition: all 0.2s;
     font-family: Cutive Mono;
     display: flex;
     justify-content: center;
