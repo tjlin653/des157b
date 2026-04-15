@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 10</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        body {
+            min-height: 10000px;
+            max-width: 1000px;
+            width: 1000px;
+        }
+        
+        #kitten {
+            width: 300px;
+            height: 300px;
+        }
+        
+        #content {
+            position: fixed;
+            width: 1000px;
+            top: 20px;
+        }
+        
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        
+        section {
+            overflow-y: scroll;
+            height: calc(100vh - 200px);
+        }
+    </style>
+</head>
+
+<body>
+    <main id="content">
+        <h1>Challenge 10</h1>
+
+        <h2>Scroll and Watch the Picture Change</h2>
+        <div class="container">
+            <img src="http://placekittens.com/301/301" id="kitten" alt="kittens!">
+            <section>
+                <h2>Challenge Directions</h2>
+                <p>Hello! The key to understanding this challenge is by looking at the source attribute for the image from the placekitten API. The two numbers at the end deterimine the size of the picture, but they also change the picture. If you change
+                    the src to <code>http://placekittens.com/301/301</code>, you will see you get a different image.</p>
+
+                <p>The challenge is to make it so that as the page scrolls down, the numbers in that source attribute change and the picture changes. I have set the page to 10,000 pixels tall, and I have fixed the position of the content at the top of the
+                    window. Also the image is set to display at 300x300 pixels no matter what the source attribute says.
+                </p>
+                <ol>
+                    <li>To make this work, you will need three variables, plus one to which you can assign the image element. The three variables are <code>pageTop</code>, <code>prevPageTop</code>, and
+                        <code>size</code>. Use the <code>let</code> keyword and assign 0 to all of them. Then add the variable for the <code>img</code> element.
+                    </li>
+                    <li>Then you will need to attach an event listener to the window and listen for the scroll event. When that fires, run an anonymous function.</li>
+                    <li>In the anonymous function set <code>pageTop</code> to <code>window.pageYOffset</code> if you
+                        <code>console.log()</code> out <code>pageTop</code>you will see numbers going up and down in the console as you scroll the page.
+                    </li>
+                    <li>It is probably not a good idea to change the picture every time you scroll a tiny little bit. So instead, check if <code>pageTop</code> is divisible by 30 using the modulus operator. If it is, increment the <code>size</code> variable.</li>
+                    <li>Then you can change the source attribute of the image so that the numbers at the end are 300 +
+                        <code>size</code>.
+                    </li>
+                    <li>What you have should be working, but it would be nice if the <code>size</code> variable incremented as you scrolled down the page (and <code>pageTop</code> gets larger) and decrements as you scroll up the page. This is what the <code>prevPageTop</code>                        variable is for. You can use it to compare it's value to <code>pageTop</code>. If it's a smaller number than
+                        <code>pageTop</code>, then you are scrolling down, and <code>size</code> should be incremented. If you are scrolling up, then <code>prevPageTop</code> will be larger, so <code>size</code> shoudl be decremented. See if you can figure
+                        it out. Scroll events are always challenging.
+                    </li>
+                </ol>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // add your script and don't forget the IIFE and the 'use strict' directive
+        (function(){
+            'use strict';
+            let pageTop = 0;
+            let prevPageTop = 0;
+            let size = 0;
+            let img = document.getElementById('kitten');
+            window.addEventListener('scroll', function(){
+                pageTop = window.pageYOffset;
+                if (pageTop % 30 == 0) {
+                    size++;
+                    let src = img.getAttribute('src');
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

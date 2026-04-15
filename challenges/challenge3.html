@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    
+    <title>Video API Challenge 1</title>
+
+    <style>
+        #myVid {
+            /* max-width: 100vw;
+            max-height: 100vh; */
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: 0;
+        }
+
+       #fullscreen {
+            position: absolute;
+            color:orange;
+            top: 20px;
+            right: 20px;
+            font-size: 36px;
+            z-index: 1;
+        }
+
+        #fullscreen:hover {
+            cursor: pointer;
+        }
+
+        #imgBog, #para {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            z-index: 2;
+        }
+
+        #para {
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <section id="section">
+        <img id='imgBog' src="media/bog.jpg" alt="a red-footed tortoise named bog">
+        <p id="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+
+    <video id='myVid' muted loop autoplay playsinline>
+        <source src="media/bog.webm" type="video/webm">
+        <source src="media/bog.mp4" type="video/mp4">
+        <p>Your browser doesn't support HTML5 video. Here is a <a href="media/bog.mp4">link to the video</a> instead.</p>
+    </video>
+
+    <i class="fa-solid fa-expand" id="fullscreen"></i>
+
+    <script>
+        (function(){
+            'use strict';
+            const fs = document.getElementById('fullscreen');
+            fs.addEventListener('click', function(){
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    document.exitFullscreen();
+                }
+            })
+        })();
+    </script>
+</body>
+</html>

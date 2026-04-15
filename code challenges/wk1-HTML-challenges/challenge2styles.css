@@ -1,0 +1,15 @@
+body {
+    font-family: Arial;
+    color: #666;
+    padding: 30px;
+    margin: 0;
+}
+header, footer {
+    background-color: aqua;
+    padding: 20px;
+    text-align: center;
+}
+article {
+    background-color: azure;
+    padding: 20px;
+}

@@ -1,0 +1,23 @@
+body {
+    font-family: Arial;
+    color:#333;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.35em;
+}
+
+li {
+    margin-bottom: .8em;
+}
+
+code {
+    background-color: #efefef;
+    color: #820000;
+    padding: 3px;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+    color:#5153d8;
+}

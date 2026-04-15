@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 7</title>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        #target {
+            border: 2px solid blue;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Challenge 7</h1>
+    <ul id="todo">
+        <li>Move back to Davis</li>
+        <li>Prepare for classes</li>
+        <li>Do JavaScript Challenges</li>
+        <li>Make dinner</li>
+        <li>Feed the pet llama</li>
+    </ul>
+    <button id="strike">Click Me to mark the item done!</button>
+    <h2>Challenge Directions</h2>
+    <ol>
+        <li>Make sure you use an IIFE and the <code>'use strict'</code> declaration, as in challenge 6.</li>
+        <li>Add an event handler to the button so that when it is clicked, an anonymous function runs.</li>
+        <li>The anonymous function should strike through the third item on the list, marking it as done.</li>
+        <li>Set the color of the strike through item as light grey (#ccc is fine).</li>
+    </ol>
+
+    <p>Hint: Look at <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">this
+            page</a> for a refresher on how to add event listeners. For a hint on how to get the text to have a line-through style, check <a href="https://www.w3schools.com/jsref/prop_style_textdecoration.asp">this page</a>.
+        <script>
+            // add your script and don't forget the IIFE and the 'use strict' directive
+            (function(){
+                'use strict';
+                document.getElementById('strike').addEventListener('click', function(){
+                    const thirdItem = document.getElementsByTagName('li')[2];
+                    thirdItem.style.textDecoration = 'line-through';
+                    thirdItem.style.textDecorationColor = '#ccc';
+                });
+            })();
+        </script>
+</body>
+
+</html>
