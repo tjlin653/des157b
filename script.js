@@ -5,7 +5,7 @@
         "MINISTUDIOS": `
             <nav>
                 <ol>
-                    <li><a href="#">Blockbuster Video</a></li>
+                    <li><a href="./studio1/index.html">Blockbuster Video</a></li>
                     <li><a href="#">Check Yourself</a></li>
                     <li><a href="#">Library Liberty</a></li>
                 </ol>
