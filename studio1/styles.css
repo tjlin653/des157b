@@ -43,3 +43,13 @@
     color: aliceblue;
     padding: 1rem;
 }
+
+.showing {
+    opacity: 1;
+    transition: all 2s;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 2s;
+}
