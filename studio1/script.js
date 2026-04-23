@@ -5,7 +5,6 @@
 
     let timeout;
     myVid.pause();
-
     document.addEventListener('mousemove', function() {
         myVid.play();
         clearTimeout(timeout);
