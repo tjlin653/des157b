@@ -45,12 +45,6 @@ body {
     margin: 0;
 }
 
-.day-num {
-    padding: 0.5rem 1rem 0 0;
-    margin: 0;
-    font-size: 1.5rem;
-}
-
 .day-num:hover {
     cursor: pointer;
     color: #6EBAD8;
@@ -62,7 +56,7 @@ body {
     justify-content: flex-start;
 }
 
-.day-num {
+.day-num, .day-num-none {
     font-size: 2rem;
     width: 4rem;
     height: 4rem;
@@ -71,9 +65,88 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0.5rem 1rem 0 0;
+    font-size: 2rem;
 }
 
-#cat-phone {
-    width: 45rem;
+.day-num-none {
+    opacity: 0.5;
+}
+
+#phone-mockup {
+    position: relative;
+    width: 22rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#timeline-container {
+    position: relative;
+    width: 28rem;       /* 7 days * 4rem = 28rem */
+    height: 6rem;
+    margin-top: 1.25rem;
+    z-index: 10;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 3px;
+    background-color: #f1f1f1;
+    border-radius: 2px;
+}
+
+#paw-print-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.paw-icon {
+    position: absolute;
+    bottom: 50%; /* Sits on the line */
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.time-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 60%; /* Pushes labels below the line */
+    font-size: 1rem;
+    color: #f1f1f1;
+}
+
+#cat-video {
+    position: absolute;
+    top: 25%;      /* Adjust to fit inside your phone SVG screen */
+    width: 75%;
+    z-index: 6;
+    border-radius: 10px;
+}
+
+#cat-image {
+    position: relative;
+    width: 40rem;
     height: auto;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#test {
+    position: absolute;
+    top: 19%;
+    left: 28.5%;
+    width: 241px;
+    height: 468px;
+    z-index: 7;
+    background-color: black;
 }

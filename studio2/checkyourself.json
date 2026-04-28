@@ -2,47 +2,53 @@
   "cat_logs": [
     {
       "date": "2026-04-16",
+      "visit_count": 1,
       "visits": [
-        { "time": "05:32 PM", "video_src": ""}
+        { "time": "17:32", "video_src": "media/cat-video-1.gif" }
       ]
     },
     {
       "date": "2026-04-17",
+      "visit_count": 4,
       "visits": [
-        { "time": "11:37 AM", "video_src": ""},
-        { "time": "04:09 PM", "video_src": ""},
-        { "time": "06:13 PM", "video_src": ""},
-        { "time": "08:26 PM", "video_src": ""}
+        { "time": "11:37", "video_src": "media/cat-video-2.gif"},
+        { "time": "16:09", "video_src": "media/cat-video-3.gif"},
+        { "time": "18:13", "video_src": "media/cat-video-4.gif"},
+        { "time": "20:26", "video_src": "media/cat-video-5.gif"}
       ]
     },
     {
       "date": "2026-04-18",
+      "visit_count": 3,
       "visits": [
-        { "time": "02:40 PM", "video_src": ""},
-        { "time": "06:41 PM", "video_src": ""},
-        { "time": "09:12 PM", "video_src": ""}
+        { "time": "14:40", "video_src": ""},
+        { "time": "18:41", "video_src": ""},
+        { "time": "21:12", "video_src": ""}
       ]
     },
     {
       "date": "2026-04-19",
+      "visit_count": 1,
       "visits": [
-        { "time": "08:25 PM", "video_src": ""}
+        { "time": "20:25", "video_src": ""}
       ]
     },
     {
       "date": "2026-04-20",
+      "visit_count": 3,
       "visits": [
-        { "time": "08:32 AM", "video_src": ""},
-        { "time": "11:34 AM", "video_src": ""},
-        { "time": "08:22 PM", "video_src": ""}
+        { "time": "08:32", "video_src": ""},
+        { "time": "11:34", "video_src": ""},
+        { "time": "20:22", "video_src": ""}
       ]
     },
     {
       "date": "2026-04-21",
+      "visit_count": 3,
       "visits": [
-        { "time": "08:53 AM", "video_src": ""},
-        { "time": "11:58 AM", "video_src": ""},
-        { "time": "09:15 PM", "video_src": ""}
+        { "time": "08:53", "video_src": ""},
+        { "time": "11:58", "video_src": ""},
+        { "time": "21:15", "video_src": ""}
       ]
     }
   ]
