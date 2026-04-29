@@ -1,53 +1,75 @@
-(function(){
+(function () {
     'use strict';
 
     const videoPlayer = document.querySelector('#cat-video');
+    const timelineLayer = document.querySelector('#paw-print-layer');
 
-    async function updateVideoForDate(selectedDate) {
+    function timeToPercent(timeStr) {
+        const timeParts = timeStr.split(':');
+        const hours = parseInt(timeParts[0], 10);
+        const minutes = parseInt(timeParts[1], 10);
+        const totalMinutes = (hours * 60) + minutes;
+        return (totalMinutes / 1440) * 100;
+    }
+
+    async function updateDashboard(dayNumber) {
         try {
             const response = await fetch('checkyourself.json');
             const data = await response.json();
 
-            // Format date to match JSON (e.g., "1" becomes "2026-04-01")
-            const formattedDate = `2026-04-${selectedDate.padStart(2, '0')}`;
-            
-            // Find the data for the clicked day
-            const dayData = data.cat_logs.find(log => log.date === formattedDate);
+            const formattedDate = '2026-04-' + dayNumber.padStart(2, '0');
+
+            const dayData = data.cat_logs.find(function (log) {
+                return log.date === formattedDate;
+            });
+
+            timelineLayer.innerHTML = '';
 
             if (dayData && dayData.visits.length > 0) {
-                // Sort by time to ensure we get the earliest visit
-                const sortedVisits = dayData.visits.sort((a, b) => a.time.localeCompare(b.time));
+                const sortedVisits = dayData.visits.sort(function (a, b) {
+                    return a.time.localeCompare(b.time);
+                });
 
-                // Get the video_src from the first (earliest) visit
-                const earliestVideo = sortedVisits[0].video_src;
-
-                // Update and play
-                videoPlayer.src = earliestVideo;
+                videoPlayer.src = sortedVisits[0].video_src;
                 videoPlayer.load();
                 videoPlayer.play();
-                
-                // Make video visible if you have it hidden initially
-                videoPlayer.style.opacity = "1";
+
+                for (let i = 0; i < sortedVisits.length; i++) {
+                    const visit = sortedVisits[i];
+                    const paw = document.createElement('span');
+
+                    paw.className = 'paw-icon';
+                    paw.innerHTML = '<img src="images/paw.webp" alt="Paw Icon" width="24" height="24">';
+                    paw.style.left = timeToPercent(visit.time) + '%';
+
+                    paw.onclick = (function(playVideo) {
+                        return function() {
+                            videoPlayer.src = playVideo.video_src;
+                            videoPlayer.load();
+                            videoPlayer.play();
+                        };
+                    })(visit);
+
+                    timelineLayer.appendChild(paw);
+                }
             } else {
-                // If no visits, clear the player or show a "no cat" state
                 videoPlayer.pause();
                 videoPlayer.src = "";
-                videoPlayer.style.opacity = "0";
             }
         } catch (error) {
-            console.error("Error fetching or parsing cat data:", error);
+            console.error("Error loading JSON:", error);
         }
     }
 
     function init() {
-        const days = document.querySelectorAll('.day-num');
-        
-        for (const day of days) {
-            // Only add clicks to days that actually have a number
+        const dayButtons = document.querySelectorAll('.day-num');
+
+        for (let i = 0; i < dayButtons.length; i++) {
+            const day = dayButtons[i];
             if (day.innerText.trim() !== "") {
-                day.addEventListener('click', function() {
-                    updateVideoForDate(day.innerText);
-                });
+                day.onclick = function () {
+                    updateDashboard(this.innerText);
+                };
             }
         }
     }

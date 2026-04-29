@@ -4,17 +4,17 @@
       "date": "2026-04-16",
       "visit_count": 1,
       "visits": [
-        { "time": "17:32", "video_src": "media/cat-video-1.gif" }
+        { "time": "17:32", "video_src": "media/cat-video-1.mp4" }
       ]
     },
     {
       "date": "2026-04-17",
       "visit_count": 4,
       "visits": [
-        { "time": "11:37", "video_src": "media/cat-video-2.gif"},
-        { "time": "16:09", "video_src": "media/cat-video-3.gif"},
-        { "time": "18:13", "video_src": "media/cat-video-4.gif"},
-        { "time": "20:26", "video_src": "media/cat-video-5.gif"}
+        { "time": "11:37", "video_src": "media/cat-video-2.mp4"},
+        { "time": "16:09", "video_src": "media/cat-video-3.mp4"},
+        { "time": "18:13", "video_src": "media/cat-video-4.mp4"},
+        { "time": "20:26", "video_src": "media/cat-video-5.mp4"}
       ]
     },
     {

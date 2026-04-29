@@ -85,7 +85,7 @@ body {
 
 #timeline-container {
     position: relative;
-    width: 28rem;       /* 7 days * 4rem = 28rem */
+    width: 28rem;
     height: 6rem;
     margin-top: 1.25rem;
     z-index: 10;
@@ -108,11 +108,15 @@ body {
 
 .paw-icon {
     position: absolute;
-    bottom: 50%; /* Sits on the line */
+    bottom: 50%;
     transform: translateX(-50%);
     font-size: 1.5rem;
     cursor: pointer;
     transition: transform 0.2s ease;
+}
+
+.paw-icon:hover {
+    transform: translateX(-50%) scale(1.2);
 }
 
 .time-labels {
@@ -120,33 +124,36 @@ body {
     justify-content: space-between;
     width: 100%;
     position: absolute;
-    top: 60%; /* Pushes labels below the line */
+    top: 60%;
     font-size: 1rem;
     color: #f1f1f1;
 }
 
 #cat-video {
-    position: absolute;
-    top: 25%;      /* Adjust to fit inside your phone SVG screen */
-    width: 75%;
-    z-index: 6;
-    border-radius: 10px;
-}
-
-#cat-image {
-    position: relative;
-    width: 40rem;
-    height: auto;
-    z-index: 5;
-    pointer-events: none;
-}
-
-#test {
+    border-radius: 100px;
     position: absolute;
     top: 19%;
     left: 28.5%;
     width: 241px;
     height: 468px;
     z-index: 7;
-    background-color: black;
+    border-radius: 1rem;
+}
+
+#cat-thumbnail {
+    position: absolute;
+    top: 19%;
+    left: 28.5%;
+    width: 241px;
+    height: 468px;
+    z-index: 6;
+    border-radius: 1rem;
+}
+
+#cat-holding-phone {
+    position: relative;
+    width: 40rem;
+    height: auto;
+    z-index: 5;
+    pointer-events: none;
 }
