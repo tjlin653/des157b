@@ -30,8 +30,9 @@ body {
 }
 
 #container h1 {
-    padding: 0 0 2rem 0;
+    padding: 0 0 6rem 0;
     margin: 0;
+    font-family: Lexend;
 }
 
 #day-names {
@@ -130,14 +131,13 @@ body {
 }
 
 #cat-video {
-    border-radius: 100px;
     position: absolute;
     top: 19%;
     left: 28.5%;
     width: 241px;
     height: 468px;
     z-index: 7;
-    border-radius: 1rem;
+    border-radius: 3rem;
 }
 
 #cat-thumbnail {
