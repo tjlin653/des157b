@@ -14,6 +14,7 @@
         "TOOLKIT": `
             <nav>
                 <ol>
+                    <li><a href="./libraries/index.html">Libraries</a></li>
                     <li><a href="#">Friends List</a></li>
                 </ol>
             </nav>
