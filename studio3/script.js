@@ -32,7 +32,7 @@ function checkCompletion() {
 
 function animateConstellation() {
     gsap.to(".locked", {
-        scale: 2,
+        scale: 1.5,
         duration: 2,
         repeat: -1,
         yoyo: true,
