@@ -15,7 +15,7 @@
             <nav>
                 <ol>
                     <li><a href="libraries/wk5-library-challenge-start/index.html">Libraries</a></li>
-                    <li><a href="#">Friends List</a></li>
+                    <li><a href="friendslist/index.html">Friends List</a></li>
                 </ol>
             </nav>
         `,
