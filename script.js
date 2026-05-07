@@ -7,7 +7,7 @@
                 <ol>
                     <li><a href="./studio1/index.html">Blockbuster Video</a></li>
                     <li><a href="./studio2/index.html">Check Yourself</a></li>
-                    <li><a href="#">Library Liberty</a></li>
+                    <li><a href="./studio3/index.html">Library Liberty</a></li>
                 </ol>
             </nav>
         `,
