@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Dipper</title>
+    <!--/ /-------- Normalize CSS --------/ /-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    
+    <!--/ /-------- Font Awesome --------/ /-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css">
+    
+    <!--/ /-------- Google Fonts --------/ /-->
+    <link href="https://fonts.googleapis.com/css?family=Baloo|IBM+Plex+Sans+Condensed:300,600&display=swap" rel="stylesheet">
+    
+    <!--/ /-------- Site Styling --------/ /-->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- JQuery Library -->
+    <script 
+        src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" 
+        crossorigin="anonymous" defer>
+    </script>
+
+    <!-- jQuery UI -->
+    <script 
+        src="https://code.jquery.com/ui/1.14.2/jquery-ui.min.js" 
+        integrity="sha256-mblSWfbYzaq/f+4akyMhE6XELCou4jbkgPv+JQPER2M=" crossorigin="anonymous" defer>
+    </script>
+
+    <!-- This is the minified production version of Parse JS -->
+    <script type="text/javascript" src="https://unpkg.com/parse/dist/parse.min.js"></script>
+</head>
+<body>
+    <div id="overlay">
+        <h1>Can You Build the Big Dipper?</h1>
+        <p>Drag the stars into place</p>
+        <div id="parent">
+            <div id="leftmost" class="guide"></div>
+            <div id="left2" class="guide"></div>
+            <div id="left3" class="guide"></div>
+            <div id="top-left" class="guide"></div>
+            <div id="top-right" class="guide"></div>
+            <div id="bottom-left" class="guide"></div>
+            <div id="bottom-right" class="guide"></div>
+            <i id="star1" class="fa-solid fa-star"></i>
+            <i id="star2" class="fa-solid fa-star"></i>
+            <i id="star3" class="fa-solid fa-star"></i>
+            <i id="star4" class="fa-solid fa-star"></i>
+            <i id="star5" class="fa-solid fa-star"></i>
+            <i id="star6" class="fa-solid fa-star"></i>
+            <i id="star7" class="fa-solid fa-star"></i>
+        </div>
+        <footer>
+            <p>jQuery UI & GSAP</p>
+        </footer>
+    </div>
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
