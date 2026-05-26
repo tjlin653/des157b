@@ -1,0 +1,21 @@
+{
+  "source_credits": {
+    "screen_time_and_social": "DataReportal Digital 2026 / GlobalWebIndex",
+    "device_checking_and_focus": "Pew Research Center & UCI Focus Studies"
+  },
+  "us_averages_2026": {
+    "daily_screen_time_minutes": 400,
+    "daily_social_media_minutes": 160,
+    "ad_time_percentage_of_social": 15.0,
+    "notification_dismissal_seconds": 3.0
+  },
+  "demographics_social_media_minutes": {
+    "teens_13_19": 288,
+    "young_adults_20_29": 188,
+    "adults_30_49": 132,
+    "older_adults_50_plus": 46
+  },
+  "productivity_impact": {
+    "minutes_lost_to_context_switching_per_interruption": 23.0
+  }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Footprint & Attention Split</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Footprint & Attention Visualizer</h1>
+        <p class="subtitle">Compare your daily rhythm against DataReportal & Pew Research benchmarks.</p>
+        
+        <div class="main-layout">
+            <div class="input-panel">
+                <h3>Your Daily Habits</h3>
+                
+                <div class="input-group">
+                    <label for="screenTime">Daily Screen Time (Hours):</label>
+                    <input type="number" id="screenTime" value="6.5" step="0.1" min="0" max="24">
+                </div>
+
+                <div class="input-group">
+                    <label for="socialMedia">Social Media App Usage (Hours):</label>
+                    <input type="number" id="socialMedia" value="2.5" step="0.1" min="0" max="24">
+                </div>
+
+                <div class="input-group">
+                    <label for="notifications">Notifications Checked / Day:</label>
+                    <input type="number" id="notifications" value="80" min="0">
+                </div>
+
+                <div class="input-group">
+                    <label for="sleepHours">Average Sleep (Hours):</label>
+                    <input type="number" id="sleepHours" value="7.5" step="0.1" min="0" max="24">
+                </div>
+
+                <div class="input-group">
+                    <label for="ageGroup">Your Age Group Baseline:</label>
+                    <select id="ageGroup">
+                        <option value="teens_13_19">Teens (13-19)</option>
+                        <option value="young_adults_20_29" selected>Young Adults (20-29)</option>
+                        <option value="adults_30_49">Adults (30-49)</option>
+                        <option value="older_adults_50_plus">Older Adults (50+)</option>
+                    </select>
+                </div>
+
+                <button id="updateBtn">Visualize My Footprint</button>
+            </div>
+
+            <div class="visualization-panel">
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h4>Your Whole Day Breakdown</h4>
+                        <canvas id="leftChart"></canvas>
+                    </div>
+                    <div class="chart-box">
+                        <h4>Your Screen Time Breakdown</h4>
+                        <canvas id="rightChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projection-panel">
+            <h3>Lifetime Projections</h3>
+            <p id="projectionText">Enter your metrics above and click update to calculate your trajectory.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
