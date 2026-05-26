@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where Your Life Goes</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="intro">
+            <h1>WHERE YOUR TIME GOES</h1>
+            <p>
+                Modern digital systems compete for fragments of your attention.
+                This experience visualizes where portions of your life may go over time.
+            </p>
+        </section>
+
+        <section class="questions">
+            <div class="question-card">
+                <label for="screenTime">
+                    Average daily screen time (hours)
+                </label>
+
+                <input
+                    type="range"
+                    id="screenTime"
+                    min="1"
+                    max="16"
+                    value="6"
+                >
+                <span id="screenTimeValue">6 hours</span>
+            </div>
+
+            <div class="question-card">
+                <label for="notifications">
+                    Notifications checked daily
+                </label>
+
+                <input
+                    type="range"
+                    id="notifications"
+                    min="10"
+                    max="300"
+                    value="80"
+                >
+                <span id="notificationsValue">80 notifications</span>
+            </div>
+
+            <div class="question-card">
+                <label for="socialMedia">
+                    Daily social media usage (hours)
+                </label>
+
+                <input
+                    type="range"
+                    id="socialMedia"
+                    min="0"
+                    max="10"
+                    value="3"
+                >
+                <span id="socialMediaValue">3 hours</span>
+            </div>
+        </section> 
+    </main>
+</html>
