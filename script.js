@@ -37,7 +37,7 @@
                     <li><a href="images/design_iterations.pdf">Design Iterations</a></li>
                     <li><a href="capstone/version1/index.html">Version 1</a></li>
                     <li><a href="#">Usability Test</a></li>
-                    <li><a href="#">Version 2</a></li>
+                    <li><a href="capstone/version2/index.html">Version 2</a></li>
                 </ul>
             </nav>
         `,
