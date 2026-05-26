@@ -34,10 +34,7 @@
             <nav>
                 <ul>
                     <li><a href="https://docs.google.com/document/d/1P7a45nYqElL-gbtIAj6YYulxjRMgPKNJX_bNcthvxVM/edit?usp=sharing">Proposal</a></li>
-                    <li><a href="#">Sketches</a></li>
-                    <li><a href="#">User Flows</a></li>
-                    <li><a href="#">Design Progress</a></li>
-                    <li><a href="#">LoFi Sketches</a></li>
+                    <li><a href="images/design_iterations.pdf">Design Iterations</a></li>
                     <li><a href="#">Version 1</a></li>
                     <li><a href="#">Usability Test</a></li>
                     <li><a href="#">Version 2</a></li>
