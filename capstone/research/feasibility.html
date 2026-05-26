@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feasibility Report</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f1115;
+            color: #f1f1f1;
+            line-height: 1.8;
+            padding: 40px;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        header p {
+            max-width: 800px;
+            color: #a8adb7;
+        }
+
+        .source {
+            background: #1a1d24;
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            border: 1px solid #2a2f38;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        .citation p {
+            margin-bottom: 12px;
+            color: #e5e7eb;
+        }
+
+        .annotation p {
+            margin-bottom: 16px;
+            color: #d2d6dc;
+        }
+
+        .feature-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .label {
+            color: #79a6ff;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #d2d6dc;
+        }
+
+        a {
+            color: #66aaff;
+            text-decoration: none;
+            word-break: break-word;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #8cc0ff;
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Feasibility Report</h1>
+        <p>
+            This report evaluates the technical scope, required technologies, 
+            planned features, and potential development challenges for my 
+            capstone project, <em>Where Your Life Goes</em>.
+        </p>
+    </header>
+
+    <section class="source">
+        <h2 class="feature-title">
+            Interactive Habit Questionnaire
+        </h2>
+        <div class="annotation">
+            <p>
+                <span class="label">Planned Features:</span>
+            </p>
+            <ul>
+                <li>User inputs for screen time, social media usage, and notification frequency</li>
+                <li>Interactive sliders and dynamic value updates</li>
+                <li>Personalized future projections based on user habits</li>
+            </ul>
+            <p>
+                <span class="label">Technologies Required:</span>
+            </p>
+            <ul>
+                <li>HTML forms and semantic structure</li>
+                <li>CSS styling and responsive layout design</li>
+                <li>JavaScript DOM manipulation and event listeners</li>
+            </ul>
+            <p>
+                <span class="label">Skill Assessment:</span>
+            </p>
+            <p>
+                I am already comfortable with HTML, CSS, and JavaScript event handling, 
+                so this feature is highly achievable within the project timeframe. Most 
+                of the difficulty will involve refining the visual design and making the 
+                interactions feel polished and immersive rather than technically difficult.
+            </p>
+        </div>
+    </section>
+
+    <section class="source">
+        <h2 class="feature-title">
+            Attention Fragmentation Visualization
+        </h2>
+        <div class="annotation">
+            <p>
+                <span class="label">Planned Features:</span>
+            </p>
+            <ul>
+                <li>Animated notifications interrupting the screen</li>
+                <li>A shrinking or fragmenting focus object representing user attention</li>
+                <li>Motion-based visual storytelling showing distraction over time</li>
+            </ul>
+            <p>
+                <span class="label">Technologies Required:</span>
+            </p>
+            <ul>
+                <li>JavaScript animation logic</li>
+                <li>CSS animations and transitions</li>
+                <li>Possibly GSAP for smoother motion and timing control</li>
+            </ul>
+            <p>
+                <span class="label">Skill Assessment:</span>
+            </p>
+            <p>
+                I have some experience with animation and interactive JavaScript projects, 
+                but this feature will likely require the most experimentation and refinement. 
+                I believe I can reasonably become skilled enough with GSAP and animation timing 
+                within the project timeframe because the animations are conceptually simple, 
+                even if they require careful visual tuning.
+            </p>
+        </div>
+    </section>
+
+    <section class="source">
+        <h2 class="feature-title">
+            Data Visualization and Future Projections
+        </h2>
+        <div class="annotation">
+            <p>
+                <span class="label">Planned Features:</span>
+            </p>
+            <ul>
+                <li>Visualizations of years spent online</li>
+                <li>Projected lifetime interruptions and ad exposure</li>
+                <li>Animated statistics and responsive visual outputs</li>
+            </ul>
+            <p>
+                <span class="label">Technologies Required:</span>
+            </p>
+            <ul>
+                <li>JavaScript calculations and JSON datasets</li>
+                <li>Possibly D3.js or Chart.js for advanced visualizations</li>
+                <li>Responsive CSS layouts and transitions</li>
+            </ul>
+            <p>
+                <span class="label">Skill Assessment:</span>
+            </p>
+            <p>
+                I have limited experience with advanced data visualization libraries, 
+                so I may simplify some visualizations if implementation becomes too 
+                time consuming. However, I believe I can create strong custom visualizations 
+                using standard JavaScript, CSS, and SVG elements without relying heavily 
+                on complex frameworks.
+            </p>
+        </div>
+    </section>
+
+    <section class="source">
+        <h2 class="feature-title">
+            Development Challenges and Project Changes
+        </h2>
+        <div class="annotation">
+            <p>
+                One major challenge I uncovered during development planning is that my 
+                original concept focused too heavily on calculating how much advertising 
+                revenue users generate for technology companies. After further research, 
+                I realized that this idea was too similar to existing projects such as 
+                attentionworth.com and relied on speculative financial estimates that could 
+                weaken the conceptual originality of the project.
+            </p>
+            <p>
+                Because of this, I shifted the project toward visualizing how digital 
+                systems consume portions of a person’s life over time rather than focusing 
+                primarily on monetary value. This new direction feels more emotionally 
+                impactful, more original, and better suited for data visualization and 
+                speculative storytelling.
+            </p>
+        </div>
+    </section>
+</body>
+</html>
