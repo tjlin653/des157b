@@ -1,5 +1,6 @@
+// Application Central State Management Variables
 let activeMetricsDataset = null;
-let currentVisualizationState = "macro";
+let currentVisualizationState = "macro"; // Options: "macro" | "micro"
 
 let userCalculatedShares = {
     macro: [],
@@ -17,6 +18,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 function initializeEventListeners() {
+    // Dismiss testing framework overlay hook
+    document.getElementById("btnDismissOverlay").addEventListener("click", () => {
+        document.getElementById("testingOverlay").classList.remove("active");
+    });
+
     document.getElementById("btnGenerate").addEventListener("click", () => {
         processUserInputs();
         transitionScreen("setupScreen", "matrixScreen");
@@ -50,16 +56,20 @@ function processUserInputs() {
     const totalDayHours = 24;
     const horizonYears = activeMetricsDataset.constants.lifespan_horizon_years;
 
+    // 1. Dataset Math Link: Interpolate notifications checked from hourly screen presence
     const calculatedNotificationsCount = screenHours * activeMetricsDataset.constants.notifications_per_screen_hour;
     
+    // Convert to processing overhead (hours) via standard user intervention constraints
     const handlingSecondsPerCheck = activeMetricsDataset.constants.seconds_per_notification_check;
     const dailyNotificationOverheadHours = (calculatedNotificationsCount * handlingSecondsPerCheck) / 3600;
 
+    // 2. Isolate remaining nested properties
     const dailyAdHours = socialHours * activeMetricsDataset.constants.social_media_ad_ratio;
     const pureSocialHours = Math.max(0, socialHours - dailyAdHours);
     const otherDigitalHours = Math.max(0, screenHours - socialHours - dailyNotificationOverheadHours);
     const everythingElseHours = Math.max(0, totalDayHours - screenHours - sleepHours);
 
+    // 3. Document explicit percentage breakdowns for the 2600 week squares (52 weeks * 50 years)
     const totalWeeksCount = 52 * horizonYears;
 
     userCalculatedShares.macro = [
@@ -67,10 +77,11 @@ function processUserInputs() {
         { type: "sleep", count: Math.round((sleepHours / totalDayHours) * totalWeeksCount), color: "var(--color-sleep)", label: "Average Sleep" },
         { type: "everything-else", count: 0, color: "var(--color-everything-else)", label: "Everything Else" }
     ];
-
+    // Re-balance remainder to catch rounding edge cases
     let currentSum = userCalculatedShares.macro[0].count + userCalculatedShares.macro[1].count;
     userCalculatedShares.macro[2].count = Math.max(0, totalWeeksCount - currentSum);
 
+    // Deep Micro Allocation Distribution array maps
     userCalculatedShares.micro = [
         { type: "social", count: Math.round((pureSocialHours / totalDayHours) * totalWeeksCount), color: "var(--color-social)", label: "Social Media Channels" },
         { type: "ads", count: Math.round((dailyAdHours / totalDayHours) * totalWeeksCount), color: "var(--color-ads)", label: "Ad Content Consumption" },
@@ -79,9 +90,11 @@ function processUserInputs() {
         { type: "grayed-out", count: totalWeeksCount - (userCalculatedShares.macro[1].count + userCalculatedShares.macro[2].count), color: "var(--color-grayed-out)", label: "Reclaimed Lifespan (Sleep / Physical Worlds)" }
     ];
     
+    // Balance edge cases for subset map array
     let microSum = userCalculatedShares.micro[0].count + userCalculatedShares.micro[1].count + userCalculatedShares.micro[2].count + userCalculatedShares.micro[3].count;
     userCalculatedShares.micro[4].count = totalWeeksCount - microSum;
 
+    // Save calculation aggregates directly onto window to expose values easily to string building blocks
     window.summaryData = {
         notifications: calculatedNotificationsCount,
         socialYears: (pureSocialHours * 365.25 * horizonYears / 24) / 365.25,
@@ -115,12 +128,14 @@ function generateAxisLabels(totalYears) {
     xAxisContainer.innerHTML = "";
     yAxisContainer.innerHTML = "";
 
+    // Render X-Axis labels (Weeks 1 to 52, numbered in increments of 5)
     for (let wk = 1; wk <= 52; wk++) {
         const label = document.createElement("div");
         label.innerText = (wk === 1 || wk % 5 === 0) ? wk : "";
         xAxisContainer.appendChild(label);
     }
 
+    // Render Y-Axis labels (Age tracking starting from baseline 20, up to 70)
     const baseAgeStart = 20;
     for (let yr = 0; yr < totalYears; yr++) {
         const currentAge = baseAgeStart + yr;
@@ -156,7 +171,7 @@ function renderLegendAndHeadline() {
 
     const data = window.summaryData;
     if (currentVisualizationState === "macro") {
-        headline.innerHTML = `Over your next <strong>50 year horizon</strong>, your current day-to-day habits command a massive digital footprint: You will spend <strong>${data.screenYears.toFixed(1)} years</strong> tethered to a online screens, balanced alongside <strong>${data.sleepYears.toFixed(1)} years</strong> of sleep recovery.`;
+        headline.innerHTML = `Over your next <strong>50 year horizon</strong>, your current day-to-day rhythm commands a massive footprint: You will spend <strong>${data.screenYears.toFixed(1)} years</strong> tethered to an online display, balanced alongside <strong>${data.sleepYears.toFixed(1)} years</strong> of sleep recovery.`;
     } else {
         headline.innerHTML = `Based on Pew Research and DataReportal user behavior models, your device handles roughly <strong>${Math.round(data.notifications)} background notifications daily</strong>. Your online footprint translates to: <strong>${data.socialYears.toFixed(1)} years</strong> scrolling platforms, <strong>${data.adYears.toFixed(1)} years</strong> looking at targeted advertisements, and <strong>${data.notifDays.toFixed(0)} full days</strong> just interacting with alert popups.`;
     }

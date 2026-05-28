@@ -27,6 +27,127 @@ body {
     overflow-x: hidden;
 }
 
+/* User Testing Overlay System Layout */
+.overlay-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(4, 4, 6, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.overlay-container.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.overlay-modal {
+    background-color: var(--card-surface);
+    border: 1px solid var(--border-glow);
+    max-width: 600px;
+    width: 90%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    box-sizing: border-box;
+}
+
+.overlay-badge {
+    display: inline-block;
+    background-color: rgba(57, 255, 20, 0.1);
+    color: var(--text-glow);
+    font-family: monospace;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.overlay-modal h2 {
+    margin: 0 0 12px 0;
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
+}
+
+.overlay-greeting {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+}
+
+.task-list li {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.task-list li:last-child {
+    margin-bottom: 0;
+}
+
+.task-num {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--text-glow);
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glow);
+    padding: 4px 8px;
+    border-radius: 4px;
+    min-width: 24px;
+    text-align: center;
+}
+
+.task-list p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #e4e4e7;
+}
+
+.task-list strong {
+    color: #fff;
+}
+
+.primary-overlay-btn {
+    width: 100%;
+    background-color: var(--text-glow);
+    color: #000;
+    border: none;
+    padding: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.primary-overlay-btn:hover {
+    background-color: #32e610;
+    transform: translateY(-1px);
+}
+
+/* App Containers */
 .app-wrapper {
     max-width: 1400px;
     margin: 0 auto;
@@ -51,13 +172,6 @@ body {
     margin: 80px auto;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-h1 {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    color: var(--text-glow);
-    margin-top: 0;
 }
 
 .intro-text {

@@ -7,8 +7,33 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div id="testingOverlay" class="overlay-container active">
+        <div class="overlay-modal">
+            <div class="overlay-badge">UX Testing Terminal</div>
+            <h2>Welcome to The Attention Matrix</h2>
+            <p class="overlay-greeting">This project visualizes personal time data to change how we conceptualize our digital autonomy. Please review your core objectives below before interacting:</p>
+            
+            <ul class="task-list">
+                <li>
+                    <span class="task-num">01</span>
+                    <p><strong>Baseline Initialization:</strong> Input your authentic screen habits to transform the canvas into your distinct 50-year lifespan matrix.</p>
+                </li>
+                <li>
+                    <span class="task-num">02</span>
+                    <p><strong>Perspective Alternation:</strong> Toggle between the Macro Horizon and Digital Micro-Slices views to compare your physical presence against hidden notification handling times.</p>
+                </li>
+                <li>
+                    <span class="task-num">03</span>
+                    <p><strong>Insight Evaluation:</strong> Analyze the narrative text summary and locate how many total calendar weeks are swallowed by targeted corporate advertising.</p>
+                </li>
+            </ul>
+
+            <button id="btnDismissOverlay" class="primary-overlay-btn">Begin Evaluation Protocol</button>
+        </div>
+    </div>
+
     <div class="app-wrapper">
-        
         <section id="setupScreen" class="screen active">
             <div class="terminal-box">
                 <h1>DESIGNING THE FUTURE: THE ATTENTION MATRIX</h1>
@@ -49,27 +74,22 @@
                         <button id="btnStateMicro" class="toggle-btn">State 2: Digital Micro-Slices</button>
                     </div>
 
-                    <div id="legendContainer" class="legend-card">
-                        </div>
+                    <div id="legendContainer" class="legend-card"></div>
                 </div>
 
                 <div class="matrix-display-container">
-                    <h3>Your Lifespan (Next 50 Years)</h3>
-                    
+                    <h3>Your Lifespan Matrix (Next 50 Years)</h3>
                     <div class="matrix-wrapper">
                         <div></div>
-                        
                         <div id="xAxisLabels" class="x-axis-track"></div>
-                        
                         <div id="yAxisLabels" class="y-axis-track"></div>
-                        
                         <div id="weeksGrid" class="weeks-grid"></div>
                     </div>
                 </div>
             </div>
         </section>
-
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
