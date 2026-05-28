@@ -5,12 +5,10 @@
     --text-glow: #39ff14;
     --text-muted: #8e8e93;
     
-    /* Color Palette - State 1: Macro */
     --color-online: #ff3b30;
     --color-sleep: #6693F5;
     --color-everything-else: #e5e5ea;
     
-    /* Color Palette - State 2: Micro */
     --color-social: #ff9500;
     --color-ads: #32CD32;
     --color-notifications: #00f0ff;
@@ -27,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* User Testing Overlay System Layout */
 .overlay-container {
     position: fixed;
     top: 0;
@@ -147,7 +144,6 @@ body {
     transform: translateY(-1px);
 }
 
-/* App Containers */
 .app-wrapper {
     max-width: 1400px;
     margin: 0 auto;
