@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Attention Matrix: A Lifespan Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        
+        <section id="setupScreen" class="screen active">
+            <div class="terminal-box">
+                <h1>DESIGNING THE FUTURE: THE ATTENTION MATRIX</h1>
+                <p class="intro-text">Before constructing your future trajectory, we must map your current structural baseline.</p>
+                
+                <div class="form-group">
+                    <label for="inputScreenTime">Estimated Daily Screen Time (Hours):</label>
+                    <input type="number" id="inputScreenTime" value="6.5" min="0" max="24" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputSocialTime">Estimated Daily Social Media App Usage (Hours):</label>
+                    <input type="number" id="inputSocialTime" value="2.5" min="0" max="24" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputSleepTime">Average Sleep Duration (Hours):</label>
+                    <input type="number" id="inputSleepTime" value="7.5" min="0" max="24" step="0.1">
+                </div>
+
+                <button id="btnGenerate">Initialize Matrix Transformation</button>
+            </div>
+        </section>
+
+        <section id="matrixScreen" class="screen">
+            <header class="matrix-header">
+                <button id="btnBackToInputs" class="secondary-btn">← Modify Input Parameters</button>
+                <div id="narrativeHeadline" class="narrative-text-box"></div>
+            </header>
+
+            <div class="visualization-layout">
+                <div class="matrix-controls">
+                    <h3>Matrix Perspective</h3>
+                    <p class="control-tip">Toggle views to dissect where your cognitive capital is spent across your next 50 years.</p>
+                    
+                    <div class="toggle-container">
+                        <button id="btnStateMacro" class="toggle-btn active">State 1: Macro Horizon</button>
+                        <button id="btnStateMicro" class="toggle-btn">State 2: Digital Micro-Slices</button>
+                    </div>
+
+                    <div id="legendContainer" class="legend-card">
+                        </div>
+                </div>
+
+                <div class="matrix-display-container">
+                    <h3>Your Lifespan (Next 50 Years)</h3>
+                    
+                    <div class="matrix-wrapper">
+                        <div></div>
+                        
+                        <div id="xAxisLabels" class="x-axis-track"></div>
+                        
+                        <div id="yAxisLabels" class="y-axis-track"></div>
+                        
+                        <div id="weeksGrid" class="weeks-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

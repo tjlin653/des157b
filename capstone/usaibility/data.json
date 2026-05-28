@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "Attention Lifespan Dataset Baseline",
+    "sources": "DataReportal 2026 Global Overview, Pew Research Center Digital Trends"
+  },
+  "constants": {
+    "lifespan_horizon_years": 50,
+    "days_per_year": 365.25,
+    "notifications_per_screen_hour": 11.5,
+    "seconds_per_notification_check": 2.5,
+    "social_media_ad_ratio": 0.15
+  }
+}
