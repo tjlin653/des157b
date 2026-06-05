@@ -45,7 +45,7 @@
             <nav>
                 <ul>
                     <li><a href="#">Case Study</a></li>
-                    <li><a href="#">Project</a></li>
+                    <li><a href="capstone/project/index.html">Project</a></li>
                 </ul>
             </nav>
         `

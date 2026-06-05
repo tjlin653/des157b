@@ -1,0 +1,577 @@
+:root {
+    --bg-dark-void: #060608;
+    --surface-card: #0f0f13;
+    --border-subtle: #1a1a24;
+    --neon-green: #39ff14;
+    --text-muted: #83838e;
+    
+    /* Macro Palette */
+    --color-online: #ff3b30;
+    --color-sleep: #1f4068;
+    --color-everything-else: #e5e5ea;
+    
+    /* Micro Palette (High Contrast) */
+    --color-social: #af52de;         
+    --color-ads: #ccff00;            
+    --color-notifications: #00f0ff;   
+    --color-other-digital: #ff9500;  
+    --color-grayed-out: #222226;     
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    background-color: var(--bg-dark-void);
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+#viewportContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.viewport-screen {
+    width: 100%;
+    max-width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#screen-6, #screen-7 {
+    overflow: hidden !important;
+}
+
+/* Center-aligned layout framework for stats pages */
+.content-wrapper {
+    width: 100%;
+    max-width: 850px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Typography Engine */
+.step-indicator {
+    font-family: monospace;
+    color: var(--neon-green);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+}
+
+.existential-title, h2 {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+}
+
+.narrative-body, .existential-sub, .form-intro {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 680px;
+    margin: 0 auto 24px auto;
+}
+
+/* Statistics Display Panel Layout */
+.citation-box {
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.stat-highlight {
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #fff;
+    display: block;
+    margin-bottom: 12px;
+    font-family: monospace;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.source-tag {
+    display: block;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Centralized Screen Bottom Navigation Controls */
+.nav-down-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text-muted);
+    padding: 12px 32px;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: monospace;
+    z-index: 10;
+}
+
+.nav-down-btn:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255,255,255,0.03);
+}
+
+/* User Intake Form Parameters */
+.intake-form {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.input-card {
+    flex: 1;
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    padding: 20px 16px;
+    border-radius: 8px;
+}
+
+.input-card label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.input-card input {
+    width: 100%;
+    background: #000;
+    border: 1px solid var(--border-subtle);
+    color: #fff;
+    padding: 10px;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    text-align: center;
+    font-family: monospace;
+}
+
+.action-trigger-btn {
+    background-color: var(--neon-green);
+    color: #000;
+    border: none;
+    padding: 16px 36px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.action-trigger-btn:hover { background-color: #2ee60d; }
+
+/* COMPACT VIEWPORT DASHBOARD ARCHITECTURE (SLIDE 6) */
+.content-wrapper.matrix-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    text-align: left;
+}
+
+.matrix-sidebar {
+    max-width: 420px;
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.matrix-sidebar h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.narrative-insight-display {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.toggle-container {
+    display: inline-flex;
+    gap: 4px;
+    background-color: #000;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 16px;
+    width: fit-content;
+}
+
+.toggle-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.toggle-tab.active {
+    background-color: var(--surface-card);
+    color: #fff;
+}
+
+.legend-stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.legend-row-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.color-swatch-box {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* RESTORED USER ORIGINAL BUTTON STYLES */
+.matrix-sidebar .footer-nav-down {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-top: 18px;
+}
+
+.footer-nav-down {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text-muted);
+    padding: 12px 32px;
+    font-size: 0.85rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: monospace;
+    width: fit-content;
+}
+
+.footer-nav-down:hover {
+    border-color: #fff;
+    color: #fff;
+    background: rgba(255,255,255,0.03);
+}
+
+.modify-back-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: underline;
+    padding: 0;
+    text-align: left;
+    width: fit-content;
+    margin-top: 8px;
+}
+
+/* DATA GRID & AXES FRAMEWORK */
+.matrix-visualization-frame {
+    flex: 1 1 65%;
+    background-color: #000;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 45px 30px 30px 110px; /* Expanded left spacing to secure text alignment safety */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.axis-title-x {
+    position: absolute;
+    top: 16px;
+    left: calc(50% + 40px);
+    transform: translateX(-50%);
+    font-family: monospace;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.axis-title-y {
+    position: absolute;
+    left: -120px; /* Pushed significantly outward to prevent overlap completely */
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: monospace;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    width: 400px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.matrix-axis-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 12px 24px; /* Widened the gutter space separating numbers from the visual canvas grid */
+    align-items: center;
+}
+
+#xAxisLabels {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: repeat(52, minmax(0, 1fr));
+    gap: 2px;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    text-align: center;
+}
+
+#yAxisLabels {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-rows: repeat(50, minmax(0, 1fr));
+    gap: 2px;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    text-align: right;
+    padding-right: 4px; 
+    height: 100%;
+    align-items: center;
+}
+
+.weeks-grid-canvas {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(52, minmax(0, 1fr));
+    grid-template-rows: repeat(50, minmax(0, 1fr));
+    gap: 2px;
+    width: 100%;
+    height: 52vh;
+}
+
+/* BLOCK-BY-BLOCK SEQUENTIAL TRANSITION ENGINE STYLE DEFINITIONS */
+.week-node {
+    width: 100%;
+    height: 100%;
+    background-color: #111;
+    border-radius: 1px;
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                background-color 0.3s ease;
+    will-change: transform, opacity, background-color;
+    aspect-ratio: 1; 
+}
+
+.week-node.reveal-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* SYSTEM SIMULATION MODEL SLIDE (SLIDE 7 HORIZONTAL ALIGNMENT FIXES) */
+#screen-7 .content-wrapper.split {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1340px; /* Extended to balance tracking widths */
+    height: 100%;
+    text-align: left;
+}
+
+#screen-7 .text-side {
+    flex: 0 0 35%;
+    max-width: 440px;
+}
+
+#screen-7 .visual-side {
+    flex: 1 1 65%;
+    background-color: #000;
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 45px 30px 30px 110px; /* Identical architectural framing values matched from Slide 6 */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reclamation-control-card {
+    background-color: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    padding: 16px 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 12px 0;
+}
+
+.reclamation-control-card input[type=range] {
+    flex: 1;
+    accent-color: var(--neon-green);
+}
+
+.slider-display-badge {
+    background-color: #000;
+    border: 1px solid var(--border-subtle);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: var(--neon-green);
+    font-size: 0.85rem;
+}
+
+.rescue-metrics-panel {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.rescue-metric {
+    flex: 1;
+    background: rgba(57, 255, 20, 0.02);
+    border: 1px dashed rgba(57, 255, 20, 0.2);
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.rescue-highlight {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--neon-green);
+    font-family: monospace;
+}
+
+.rescue-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* Horizontal alignment mapping frame updates built below */
+.mini-matrix-axis-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px 24px; /* Perfectly aligns spacing gap layout boundaries with Main Matrix */
+    align-items: center;
+    width: 100%;
+}
+
+.mini-grid-canvas {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(52, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    gap: 1px;
+    width: 100%;
+    background-color: #000;
+    padding: 0;
+    height: 52vh; /* Matches total vertical canvas scale geometry safely */
+}
+
+.mini-node {
+    aspect-ratio: 1;
+    background-color: #111;
+    border-radius: 1px;
+    transition: background-color 0.3s;
+}
+
+/* RESPONSIVE RENDERING OVERRIDES */
+@media (max-width: 960px) {
+    .content-wrapper.matrix-layout,
+    #screen-7 .content-wrapper.split {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding-top: 20px;
+    }
+
+    .matrix-sidebar,
+    #screen-7 .text-side,
+    #screen-7 .visual-side,
+    .matrix-visualization-frame {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+    }
+    
+    .weeks-grid-canvas, .mini-grid-canvas {
+        height: 40vh;
+    }
+}

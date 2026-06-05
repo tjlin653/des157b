@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Attention Matrix: Designing Your Future</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css">
+</head>
+<body>
+
+    <main id="viewportContainer">
+        <section class="viewport-screen active" id="screen-1">
+            <div class="content-wrapper centered">
+                <span class="step-indicator">01 / 07</span>
+                <h1 class="existential-title">Where does your conscious life actually go?</h1>
+                <p class="existential-sub">We treat our days as an infinite resource. But when parsed through modern digital architecture, your awareness is carefully fragmented, packaged, and auctioned away. Let's trace your timeline.</p>
+                <button class="nav-down-btn" onclick="scrollToNextScreen(2)">Descend Into the Data →</button>
+            </div>
+        </section>
+
+        <section class="viewport-screen" id="screen-2">
+            <div class="content-wrapper split">
+                <div class="text-side">
+                    <span class="step-indicator">02 / 07 — The Economics of Awareness</span>
+                    <h2>The Commercialization of Attention</h2>
+                    <p class="narrative-body">Social platforms are not utilities; they are behavior modification engines. Feeds are precision-engineered to prolong your stay, transforming your natural human attention span into predictable ad real-estate clicks.</p>
+                    <div class="citation-box">
+                        <span id="stat-social-hours" class="stat-highlight">2h 23m</span>
+                        <p>The global daily average spent purely scrolling social channels. Within these streams, 20% to 30% of your cognitive horizon is legally mandated to display targeted advertising content.</p>
+                        <span class="source-tag">Source: DataReportal Global Overview / GWI Media Trends</span>
+                    </div>
+                </div>
+                <div class="visual-side">
+                    <button class="nav-down-btn" onclick="scrollToNextScreen(3)">Analyze the Friction ↓</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="viewport-screen" id="screen-3">
+            <div class="content-wrapper split">
+                <div class="text-side">
+                    <span class="step-indicator">03 / 07 — Cognitive Taxation</span>
+                    <h2>The Hidden Cost of Interruption</h2>
+                    <p class="narrative-body">Every buzz, ding, and banner preview breaks your focus loop. This continuous state of partial attention leaves your cognitive processing deeply fragmented, draining mental energy even when you aren't looking directly at a screen.</p>
+                    <div class="citation-box">
+                        <span id="stat-focus-tax" class="stat-highlight">23m 15s</span>
+                        <p>The exact amount of time it takes your prefrontal cortex to deeply refocus on a primary task after handling a single digital interruption or notification alert.</p>
+                        <span class="source-tag">Source: Dr. Gloria Mark, Department of Informatics, UC Irvine</span>
+                    </div>
+                </div>
+                <div class="visual-side">
+                    <button class="nav-down-btn" onclick="scrollToNextScreen(4)">Examine the Mechanics ↓</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="viewport-screen" id="screen-4">
+            <div class="content-wrapper split">
+                <div class="text-side">
+                    <span class="step-indicator">04 / 07 — Choice Architecture</span>
+                    <h2>Eliminating the "Stop Signs"</h2>
+                    <p class="narrative-body">Features like infinite scroll and pull-to-refresh pull directly from casino slot-machine mechanics. By erasing natural physical boundaries or page breaks, interfaces bypass your conscious decision-making centers entirely.</p>
+                    <div class="citation-box">
+                        <span id="stat-scroll-depth" class="stat-highlight">300 Feet</span>
+                        <p>The physical thumb-scrolling distance traveled by the average platform user every single day—the equivalent height of the Statue of Liberty.</p>
+                        <span class="source-tag">Source: Center for Humane Technology / National Institutes of Health (NIH)</span>
+                    </div>
+                </div>
+                <div class="visual-side">
+                    <button class="nav-down-btn" onclick="scrollToNextScreen(5)">Initialize Your Coordinates ↓</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="viewport-screen" id="screen-5">
+            <div class="content-wrapper centered">
+                <span class="step-indicator">05 / 07 — Data Ingestion</span>
+                <h2>Input Your Structural Baselines</h2>
+                <p class="form-intro">Check your phone's digital wellbeing settings. Let's chart your upcoming 50-year horizon (Ages 20 to 70) based on your authentic daily rhythm.</p>
+                
+                <div class="intake-form">
+                    <div class="input-card">
+                        <label for="inputScreenTime">Daily Screen Time (Hours)</label>
+                        <input type="number" id="inputScreenTime" value="6.5" min="0" max="24" step="0.1">
+                    </div>
+                    <div class="input-card">
+                        <label for="inputSocialTime">Daily Social Apps (Hours)</label>
+                        <input type="number" id="inputSocialTime" value="2.5" min="0" max="24" step="0.1">
+                    </div>
+                    <div class="input-card">
+                        <label for="inputSleepTime">Daily Sleep Duration (Hours)</label>
+                        <input type="number" id="inputSleepTime" value="7.5" min="0" max="24" step="0.1">
+                    </div>
+                </div>
+
+                <button id="btnGenerate" class="action-trigger-btn" onclick="generateMatrixTrajectory()">Construct Your Lifespan Matrix</button>
+            </div>
+        </section>
+
+        <section class="viewport-screen" id="screen-6">
+            <div class="content-wrapper matrix-layout">
+                <div class="matrix-sidebar">
+                    <span class="step-indicator">06 / 07 — The Realization</span>
+                    <h2 id="matrixTitle">Your Attention Matrix</h2>
+                    <div id="narrativeHeadline" class="narrative-insight-display"></div>
+                    
+                    <div class="toggle-container">
+                        <button id="btnStateMacro" class="toggle-tab active" onclick="switchState('macro')">Macro Horizon</button>
+                        <button id="btnStateMicro" class="toggle-tab" onclick="switchState('micro')">Digital Micro-Slices</button>
+                    </div>
+
+                    <div id="legendContainer" class="legend-stack"></div>
+                    <button class="footer-nav-down" onclick="scrollToNextScreen(7)">Proceed to Reclaim Your Timeline ↓</button>
+                </div>
+
+                <div class="matrix-visualization-frame">
+                    <div class="axis-title-x">LIFESPAN WEEKS (1 TO 52)</div>
+                    <div class="axis-title-y">CURRENT TRACKED AGE (20 TO 70)</div>
+                    
+                    <div class="matrix-scroll-wrapper">
+                        <div class="matrix-axis-grid">
+                            <div></div>
+                            <div id="xAxisLabels" class="x-axis-row"></div>
+                            <div id="yAxisLabels" class="y-axis-column"></div>
+                            <div id="weeksGrid" class="weeks-grid-canvas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="viewport-screen" id="screen-7">
+            <div class="content-wrapper split">
+                <div class="text-side">
+                    <span class="step-indicator">07 / 07 — Designing the Future</span>
+                    <h2>Reclaim Your Attention Architecture</h2>
+                    <p class="narrative-body">Your attention didn't drift away by accident—it was harvested by intentional software design choices. Because this matrix is a product of design, **you have the total power to re-architect it.** You are the ultimate systems designer of your own human lifespan.</p>
+                    
+                    <div class="reclamation-control-card">
+                        <label for="reclamationSlider">Daily Screen Reduction Target:</label>
+                        <div class="slider-wrapper">
+                            <input type="range" id="reclamationSlider" min="0" max="180" value="0" step="15" oninput="updateReclamationSimulation(this.value)">
+                            <span id="sliderValueText" class="slider-display-badge">0 Minutes / Day</span>
+                        </div>
+                        <p class="slider-explanation">Slide to adjust how many minutes of passive scrolling you want to convert back into autonomous real-world time.</p>
+                    </div>
+
+                    <div class="rescue-metrics-panel">
+                        <div class="rescue-metric">
+                            <span id="txtRescuedWeeks" class="rescue-highlight">0</span>
+                            <span class="rescue-label">Lifespan Weeks Rescued</span>
+                        </div>
+                        <div class="rescue-metric">
+                            <span id="txtRescuedYears" class="rescue-highlight">0.0</span>
+                            <span class="rescue-label">Years of Direct Agency Gained</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="visual-side frame-right-matrix">
+                    <h3>Your Reconfigured Trajectory</h3>
+                    <div id="miniWeeksGrid" class="mini-grid-canvas"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

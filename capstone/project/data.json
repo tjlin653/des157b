@@ -1,0 +1,18 @@
+{
+    "meta": {
+        "dataset_name": "Global Cognitive Attention Baselines",
+        "last_updated": "2026",
+        "authoritative_sources": ["DataReportal", "GWI", "Gloria Mark Research Lab"]
+    },
+    "benchmarks": {
+        "global_social_daily_minutes": 143,
+        "refocus_delay_seconds": 1395,
+        "scroll_distance_feet": 300
+    },
+    "constants": {
+        "lifespan_horizon_years": 50,
+        "notifications_per_screen_hour": 11.5,
+        "seconds_per_notification_check": 22,
+        "social_media_ad_ratio": 0.25
+    }
+}
