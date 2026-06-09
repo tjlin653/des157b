@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UX/UI Case Study: The Attention Matrix</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1115;
+            color: #f1f1f1;
+            line-height: 1.8;
+            padding: 40px;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        header p {
+            max-width: 800px;
+            color: #a8adb7;
+            font-weight: 400;
+        }
+
+        address {
+            font-style: normal;
+            margin-top: 5px;
+        }
+
+        header em {
+            display: block;
+            margin-top: 15px;
+            color: #a8adb7;
+            font-size: 0.9rem;
+        }
+
+        nav {
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            gap: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2a2f38;
+        }
+
+        section {
+            background: #1a1d24;
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            border: 1px solid #2a2f38;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        section img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #2a2f38;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+            color: #d2d6dc;
+            font-weight: 400;
+        }
+
+        .content strong {
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .content em {
+            color: #ffffff;
+        }
+
+        .content .column {
+            margin-bottom: 25px;
+        }
+
+        .content ol {
+            margin-left: 20px;
+            margin-bottom: 25px;
+            color: #d2d6dc;
+        }
+
+        .content ol li {
+            margin-bottom: 8px;
+        }
+
+        #ui .content div:last-child {
+            display: flex;
+            gap: 20px;
+        }
+
+        #ui .content div:last-child img {
+            flex: 1;
+            max-height: 500px;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #2a2f38;
+        }
+
+        footer p {
+            color: #a8adb7;
+        }
+
+        a {
+            color: #66aaff;
+            text-decoration: none;
+            word-break: break-word;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #8cc0ff;
+            text-decoration: underline;
+        }
+
+        code, pre, .matrix-raw-data {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <div class="container">
+            <h1>Your Online Life in Weeks - Case Study</h1>
+            <p>Tony Lin</p>
+            <address>
+                &#116;&#106;&#108;&#105;&#110;&#64;&#117;&#99;&#100;&#97;&#118;&#105;&#115;&#46;&#101;&#100;&#117;
+            </address>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#overview">overview</a></li>
+            <li><a href="#research">research</a></li>
+            <li><a href="#design">design</a></li>
+            <li><a href="#ui">user interface</a></li>
+            <li><a href="#revisions">revisions</a></li>
+            <li><a href="#summary">summary</a></li>
+        </ul>
+    </nav>
+
+    <section id="overview">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <div class="content">
+                <p><strong>The Life Calendar</strong> is an interactive web-based data narrative that forces users to confront the physical reality of their screen habits over a 50-year horizon. Instead of displaying abstract metrics or standard graphs, the application translates daily screen and sleep data into a high-density grid containing 2,600 unique nodes—each single box representing one week of a user's remaining conscious life.</p>
+                <p><strong>The Target Audience:</strong> Built primarily for digital natives, professionals, and students operating within high-density notification ecosystems, who track screen metrics but experience "data numbness" due to standard, non-contextual log summaries.</p>
+                <p><strong>Core Project Goals:</strong> The system aims to bridge the gap between abstract time tracking and tangible human mortality. By transforming raw numerical variables (e.g., 6.5 hours of daily usage) into a visual footprint, the interface visualizes how digital architecture packages, sections off, and alters our cognitive awareness.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="research">
+        <div class="container">
+            <h2>Project Research</h2>
+            <div class="content">
+                <p>To establish credible mathematical models, competitive and comparative analysis was executed across modern time-tracking features (Apple Screen Time, Android Digital Wellbeing) and data-journalism tools (The Center for Humane Technology benchmarks). The findings revealed a critical gap: existing systems act as passive historical logs. They tell users what they did yesterday, but fail to show the compounding trajectory of those habits over time.</p>
+                <p><strong>How the Research Shifted the Strategy:</strong> Initially, the project was conceived as a basic real-time dashboard calculator. However, behavioral data showed that numbers alone fail to change user perspective. The project evolved to leverage structured ratio constants fetched from data layers (such as factoring a 25% social media ad ratio or context-switching taxes based on empirical studies by Dr. Gloria Mark). This shifted the design from a basic utility counter into an narrative-driven progressive disclosure funnel.</p>
+                <a href="capstone/research/comparative-analysis.html" class="link">View Comparative Analysis</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="design">
+        <div class="container">
+            <h2>Visual Design & Typography</h2>
+            <div class="content">
+                <img src="images/typo.png" alt="Typography Weight and Color Contrast Spectrum Sheet">
+                <p>The visual system was constructed using a high-contrast palette (`#060608` void black base) to mimic an immutable terminal environment, establishing a serious mood suited to existential metrics. Colors were assigned strict functional properties: standard digital engagement is mapped in aggressive crimson, sleep uses a passive deep blue, and real-life or reclaimed time uses a bright neon green.</p>
+                <p><strong>Typography System Decisions:</strong> To combat reading fatigue and establish strong informational hierarchy, weight values were maxed out dynamically—pairing strict `400` regular weights for descriptive labels with an impactful `800` heavy bold font for headline callouts. This structural visual contrast ensures numbers stand out instantly even within complex data displays.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ui">
+        <div class="container">
+            <h2>User Interface</h2>
+            <div class="content">
+                <div class="column">
+                    <p>To reduce initial cognitive load, the application employs a deliberate linear funnel structure. Users cannot view the massive lifecycle matrix until they pass through isolated, data-backed introduction panels and an initial estimation input step. This design protects the user from immediate data saturation, matching standard usability onboarding principles.</p>
+                    <p><strong>Usability Principles:</strong> 
+                        <em>Visibility & Mapping</em> are explicitly addressed on Slide 6 through a dual-state dashboard engine. Users can seamlessly toggle between an "All Activities" overview (broad structural chunks of life) and a granular "Online Activities" view. This view splits the online block into distinct segments: core social scrolling, advertisement consumption, and notification checking. This breakdown maps directly to real-world habits that are usually hidden inside generic tracking categories.
+                    </p>
+                </div>
+                <div class="column">
+                    <p><strong>Example Tasks Users Can Complete:</strong></p>
+                    <ol>
+                        <li>Input daily screen time to automatically build a custom lifelong matrix.</li>
+                        <li>Toggle between the two views that split their life into macro and micro perspectives.</li>
+                        <li>Isolate exactly how many weeks of their life are spent looking at ads.</li>
+                        <li>Hover over individual grid blocks to view localized metrics.</li>
+                    </ol>
+                </div>
+                <div>
+                    <img src="images/macro.png" alt="Slide 6 Macro Dashboard Matrix View Mockup">
+                    <img src="images/micro.png" alt="Slide 6 Micro Dissected View Mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="revisions">
+        <div class="container">
+            <h2>Revisions</h2>
+            <div class="content">
+                <p>The initial design included pie charts instead of a grid-based approach, which felt too boring and unengaging. I was then pivoted to a grid-based design, inspired by the popular "Your Life in Weeks" diagram. Based on this inspiration, I developed a matrix-like approach to visualize the user's online activity in a similar fashion.</p>
+                <p>Furthermore, early versions lacked narrative elements, leaving users to not feel empowered to make changes. In response to this user feedback, I included a few slides before the user was prompted to input their data. This allowed for more context and build-up to the user's journey. I also implemented actionable steps at the end of the project to leave the user with a sense of control and agency.</p>
+                <img src="images/reclaim.png" alt="Slide 7 Reclaimed Day Grid Interactive Tool Blueprint">
+            </div>
+        </div>
+    </section>
+
+    <section id="summary">
+        <div class="container">
+            <h2>Summary</h2>
+            <div class="content">
+                <p>Working on this project highlighted the challenge of keeping interactive data visualizations highly performant. Managing tons of elements inside a live DOM grid requires a strict balance between styling, container layouts, and raw scripting constraints.</p>
+                <p>The most challenging yet most rewarding aspect was successfully implementing a grid that accurately represented the user's input. I am most proud of the fact that I got the core functionality working as intended.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Your Online Life in Weeks - Case Study</p>
+            <p>Tony Lin</p>
+            <address>
+                &#116;&#106;&#108;&#105;&#110;&#64;&#117;&#99;&#100;&#97;&#118;&#105;&#115;&#46;&#101;&#100;&#117;
+            </address>
+            <p><a href="#top">top</a></p>
+        </div>
+    </footer>
+</body>
+</html>

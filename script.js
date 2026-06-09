@@ -23,7 +23,7 @@
             <nav>
                 <ul>
                     <li><a href="https://www.figma.com/board/inJez1SzI0TRa6xjvVashd/Capstone-Project-Brainstorming--Copy-?node-id=0-1&t=hjMiHyyvtqKRRLPc-1">Brainstorm</a></li>
-                    <li><a href="capstone/research/index.html">Comparative Analysis</a></li>
+                    <li><a href="capstone/research/comparative-analysis.html">Comparative Analysis</a></li>
                     <li><a href="capstone/research/bibliography.html">Annotated Bibliography</a></li>
                     <li><a href="capstone/research/feasibility.html">Feasibility Report</a></li>
                     <li><a href="capstone/research/usability-results.html">Usability Results</a></li>
@@ -44,7 +44,7 @@
         "CAPSTONE": `
             <nav>
                 <ul>
-                    <li><a href="#">Case Study</a></li>
+                    <li><a href="capstone/casestudy/index.html">Case Study</a></li>
                     <li><a href="capstone/project/index.html">Project</a></li>
                 </ul>
             </nav>
