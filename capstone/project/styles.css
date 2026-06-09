@@ -1,6 +1,3 @@
-/* ==========================================
-   GLOBAL & ROOT
-   ========================================== */
 :root {
     --bg-dark-void: #060608;
     --surface-card: #0f0f13;
@@ -29,7 +26,7 @@ body, html {
 }
 
 /* ==========================================
-   VIEWPORT (Controls Main Scroll)
+   VIEWPORT (controls main scroll/slide transitions)
    ========================================== */
 #viewportContainer {
     width: 100%;
@@ -61,7 +58,7 @@ body, html {
 }
 
 /* ==========================================
-   TYPOGRAPHY & BUTTONS (Global)
+   TYPOGRAPHY & BUTTONS (global)
    ========================================== */
 .slide-number {
     display: block;
@@ -141,7 +138,7 @@ body, html {
 }
 
 /* ==========================================
-   MAIN QUESTION (Slide 1)
+   MAIN QUESTION (slide 1)
    ========================================== */
 .existential-title { 
     font-size: 2.1rem; 
@@ -150,7 +147,7 @@ body, html {
 }
 
 /* ==========================================
-   GATEKEEPER QUESTION INTERACTION (Slides 2-4)
+   GATEKEEPER QUESTION INTERACTION (slides 2-4)
    ========================================== */
 .prediction-label { 
     display: block; 
@@ -197,7 +194,7 @@ body, html {
 }
 
 /* ==========================================
-   INTAKE FORM (Slide 5)
+   INTAKE FORM (slide 5)
    ========================================== */
 #intake-step-guess, #intake-step-actual { 
     width: 100%; 
@@ -246,7 +243,7 @@ body, html {
 }
 
 /* ==========================================
-   MATRIX DASHBOARD (Slide 6)
+   MATRIX/CALENDAR DASHBOARD (slide 6)
    ========================================== */
 #screen-6 { 
     padding: 32px 32px; 
@@ -429,7 +426,7 @@ body, html {
 }
 
 /* ==========================================
-   RECLAMATION (Slide 7)
+   RECLAMATION (slide 7)
    ========================================== */
 #screen-7 { 
     padding: 32px 40px; 
